@@ -38,7 +38,7 @@ void main(void)
 	var_TexDiffuse = (attr_TexCoord * u_textureMatrix).xy;
 
 	// # generate the vertex color, which can be 1.0, color, or 1.0 - color
-	var_Color = (attr_Color / 255.0) * u_colorModulate + u_colorAdd;
+	var_Color = attr_Color * u_colorModulate + u_colorAdd;
 
 	//gl_Position = ftransform();
 	gl_Position = u_modelViewProjectionMatrix * attr_Vertex;
